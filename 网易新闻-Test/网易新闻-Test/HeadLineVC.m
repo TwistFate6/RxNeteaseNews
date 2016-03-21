@@ -9,6 +9,7 @@
 #import "HeadLineVC.h"
 #import "RxNetworkTool.h"
 #import "RxHeadLineModel.h"
+#import "RxLoopView.h"
 
 @interface HeadLineVC ()
 
@@ -20,7 +21,14 @@
     [super viewDidLoad];
 
     [RxHeadLineModel loadHeadLineSuccess:^(NSArray *headLines) {
+      
+//        创建图片轮播期
+        RxLoopView *loopView=[RxLoopView initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"]];
         
+//        设置frame
+        loopView.frame=self.view.bounds;
+        
+        [self.view addSubview:loopView];
         
         
     } failed:^(NSError *error) {

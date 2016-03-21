@@ -10,6 +10,9 @@
 		848875A5BCAD88BCC3332038 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180C61B75C273A0FD9C02041 /* libPods.a */; };
 		DF68EB211C9FB81400E792BF /* RxNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB201C9FB81400E792BF /* RxNetworkTool.m */; };
 		DF68EB281C9FC81D00E792BF /* RxHeadLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB271C9FC81D00E792BF /* RxHeadLineModel.m */; };
+		DF68EB2B1C9FD78000E792BF /* RxLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB2A1C9FD78000E792BF /* RxLoopView.m */; };
+		DF68EB2E1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB2D1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m */; };
+		DF68EB311C9FF37A00E792BF /* RxLoopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB301C9FF37A00E792BF /* RxLoopViewCell.m */; };
 		DFEB946E1C9F966800519111 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB946D1C9F966800519111 /* main.m */; };
 		DFEB94711C9F966800519111 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB94701C9F966800519111 /* AppDelegate.m */; };
 		DFEB94741C9F966800519111 /* HeadLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB94731C9F966800519111 /* HeadLineVC.m */; };
@@ -45,6 +48,12 @@
 		DF68EB201C9FB81400E792BF /* RxNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxNetworkTool.m; sourceTree = "<group>"; };
 		DF68EB261C9FC81D00E792BF /* RxHeadLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxHeadLineModel.h; sourceTree = "<group>"; };
 		DF68EB271C9FC81D00E792BF /* RxHeadLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxHeadLineModel.m; sourceTree = "<group>"; };
+		DF68EB291C9FD78000E792BF /* RxLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxLoopView.h; sourceTree = "<group>"; };
+		DF68EB2A1C9FD78000E792BF /* RxLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxLoopView.m; sourceTree = "<group>"; };
+		DF68EB2C1C9FDE7B00E792BF /* RxLoopViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxLoopViewFlowLayout.h; sourceTree = "<group>"; };
+		DF68EB2D1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxLoopViewFlowLayout.m; sourceTree = "<group>"; };
+		DF68EB2F1C9FF37A00E792BF /* RxLoopViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxLoopViewCell.h; sourceTree = "<group>"; };
+		DF68EB301C9FF37A00E792BF /* RxLoopViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxLoopViewCell.m; sourceTree = "<group>"; };
 		DFEB94691C9F966800519111 /* 网易新闻-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB946D1C9F966800519111 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFEB946F1C9F966800519111 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "网易新闻-Test/AppDelegate.h"; sourceTree = "<group>"; };
@@ -191,6 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				DFEB94751C9F966800519111 /* Main.storyboard */,
+				DF68EB291C9FD78000E792BF /* RxLoopView.h */,
+				DF68EB2A1C9FD78000E792BF /* RxLoopView.m */,
+				DF68EB2C1C9FDE7B00E792BF /* RxLoopViewFlowLayout.h */,
+				DF68EB2D1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m */,
+				DF68EB2F1C9FF37A00E792BF /* RxLoopViewCell.h */,
+				DF68EB301C9FF37A00E792BF /* RxLoopViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -399,6 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF68EB2B1C9FD78000E792BF /* RxLoopView.m in Sources */,
+				DF68EB2E1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m in Sources */,
+				DF68EB311C9FF37A00E792BF /* RxLoopViewCell.m in Sources */,
 				DF68EB211C9FB81400E792BF /* RxNetworkTool.m in Sources */,
 				DFEB94741C9F966800519111 /* HeadLineVC.m in Sources */,
 				DF68EB281C9FC81D00E792BF /* RxHeadLineModel.m in Sources */,
