@@ -6,17 +6,26 @@
 //  Copyright © 2016年 RXL. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HeadLineVC.h"
+#import "RxNetworkTool.h"
+#import "RxHeadLineModel.h"
 
-@interface ViewController ()
+@interface HeadLineVC ()
 
 @end
 
-@implementation ViewController
+@implementation HeadLineVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [RxHeadLineModel loadHeadLineSuccess:^(NSArray *headLines) {
+        
+        
+        
+    } failed:^(NSError *error) {
+        NSLog(@"数据加载错误");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
