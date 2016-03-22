@@ -35,7 +35,15 @@
 -(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles{
     
     if (self=[super init]) {
-    
+        
+        self.URLStrs=URLStrs;
+        self.titles=titles;
+        
+        
+        self.pageControl.numberOfPages=self.URLStrs.count;
+        self.titleLabel.text=self.titles[0];
+        
+        
     }
     return self;
 }
@@ -58,6 +66,9 @@
 #pragma mark - 添加子控件
 -(void)setup{
     UICollectionView *collectionView=[[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:[[RxLoopViewFlowLayout alloc]init]];
+    
+//    注册Cell
+    [collectionView registerClass:[RxLoopViewCell class] forCellWithReuseIdentifier:@"loopCell"];
     
 //    设置代理和数据源
     collectionView.delegate=self;

@@ -23,7 +23,7 @@
     [RxHeadLineModel loadHeadLineSuccess:^(NSArray *headLines) {
       
 //        创建图片轮播期
-        RxLoopView *loopView=[RxLoopView initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"]];
+        RxLoopView *loopView=[[RxLoopView alloc]initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"]];
         
 //        设置frame
         loopView.frame=self.view.bounds;
