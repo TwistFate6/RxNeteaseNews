@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		848875A5BCAD88BCC3332038 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180C61B75C273A0FD9C02041 /* libPods.a */; };
+		DF25EC8A1CA17CCE00EADEC7 /* RxWeakTimerTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DF25EC891CA17CCE00EADEC7 /* RxWeakTimerTarget.m */; };
 		DF68EB211C9FB81400E792BF /* RxNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB201C9FB81400E792BF /* RxNetworkTool.m */; };
 		DF68EB281C9FC81D00E792BF /* RxHeadLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB271C9FC81D00E792BF /* RxHeadLineModel.m */; };
 		DF68EB2B1C9FD78000E792BF /* RxLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68EB2A1C9FD78000E792BF /* RxLoopView.m */; };
@@ -44,6 +45,8 @@
 		180C61B75C273A0FD9C02041 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1FBC42346423BFFD470319 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6EB930D755D7836B2F060738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DF25EC881CA17CCE00EADEC7 /* RxWeakTimerTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWeakTimerTarget.h; sourceTree = "<group>"; };
+		DF25EC891CA17CCE00EADEC7 /* RxWeakTimerTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWeakTimerTarget.m; sourceTree = "<group>"; };
 		DF68EB1F1C9FB81400E792BF /* RxNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxNetworkTool.h; sourceTree = "<group>"; };
 		DF68EB201C9FB81400E792BF /* RxNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxNetworkTool.m; sourceTree = "<group>"; };
 		DF68EB261C9FC81D00E792BF /* RxHeadLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxHeadLineModel.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 		DF68EB1E1C9FB53400E792BF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DF25EC881CA17CCE00EADEC7 /* RxWeakTimerTarget.h */,
+				DF25EC891CA17CCE00EADEC7 /* RxWeakTimerTarget.m */,
 				DF68EB1F1C9FB81400E792BF /* RxNetworkTool.h */,
 				DF68EB201C9FB81400E792BF /* RxNetworkTool.m */,
 			);
@@ -414,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF25EC8A1CA17CCE00EADEC7 /* RxWeakTimerTarget.m in Sources */,
 				DF68EB2B1C9FD78000E792BF /* RxLoopView.m in Sources */,
 				DF68EB2E1C9FDE7B00E792BF /* RxLoopViewFlowLayout.m in Sources */,
 				DF68EB311C9FF37A00E792BF /* RxLoopViewCell.m in Sources */,

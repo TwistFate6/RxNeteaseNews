@@ -13,4 +13,11 @@
 
 -(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles;
 
+/**
+ *  时间间隔
+ */
+@property (nonatomic, assign) NSInteger timerInterval;
+
+
+
 @end

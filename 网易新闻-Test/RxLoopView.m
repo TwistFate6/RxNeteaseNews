@@ -9,6 +9,7 @@
 #import "RxLoopView.h"
 #import "RxLoopViewFlowLayout.h"
 #import "RxLoopViewCell.h"
+#import "RxWeakTimerTarget.h"
 
 @interface RxLoopView  ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -21,6 +22,9 @@
 @property (nonatomic, strong) NSArray *URLStrs;
 
 @property (nonatomic, strong) NSArray *titles;
+
+@property (nonatomic, strong) NSTimer *timer;
+
 
 @end
 
@@ -43,7 +47,16 @@
         self.pageControl.numberOfPages=self.URLStrs.count;
         self.titleLabel.text=self.titles[0];
         
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            if (URLStrs.count>1) {
+                
+                [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:URLStrs.count inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+                
+//                添加定时器
+                [self addTimer];
+            }
+        });
     }
     return self;
 }
@@ -90,6 +103,8 @@
 //    当只有一页时,隐藏
     self.pageControl.hidesForSinglePage=YES;
     [self addSubview:self.pageControl];
+    
+    self.timerInterval=2;
 }
 
 -(void)layoutSubviews{
@@ -130,4 +145,68 @@
     return cell;
 }
 
+#pragma mark - UIScrollView的代理方法
+
+/**
+ *  手动拖拽才会触发
+ */
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    计算当前滚动的页号
+    NSInteger page =scrollView.contentOffset.x/scrollView.bounds.size.width;
+    
+    if (page ==0 || page == ([self.collectionView numberOfItemsInSection:0]-1)) {
+        
+        page =self.URLStrs.count-((page==0)?0:1);
+    }
+    
+    self.titleLabel.text=self.titles[page%self.URLStrs.count];
+    self.pageControl.currentPage=page%self.URLStrs.count;
+    
+}
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    [self scrollViewDidEndDecelerating:scrollView];
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+//    销毁时钟
+    [self removeTimer];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self addTimer];
+}
+
+#pragma mark - 定时器
+/**
+ *  创建定时器
+ */
+-(void)addTimer{
+    self.timer=[RxWeakTimerTarget scheduledTimerWithTimeInterval:self.timerInterval target:self selector:@selector(nextImg) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+}
+/**
+ *  销毁定时器
+ */
+-(void)removeTimer{
+    
+    [self.timer invalidate];
+    self.timer=nil;
+    
+}
+/**
+ *  定时器回调方法
+ */
+-(void)nextImg{
+    
+    NSInteger page =self.collectionView.contentOffset.x/self.collectionView.bounds.size.width;
+    
+    CGFloat offsetX=(page+1) * self.collectionView.bounds.size.width;
+    
+    [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
+}
 @end
