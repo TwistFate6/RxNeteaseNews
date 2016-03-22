@@ -11,7 +11,7 @@
 @interface RxLoopView : UIView
 
 
--(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles;
+-(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles selected:(void (^)(NSInteger index))didSelected;
 
 /**
  *  时间间隔

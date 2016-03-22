@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 
+@property (nonatomic, copy) void (^didSelected)(NSInteger index);
+
 
 @end
 
@@ -36,13 +38,13 @@
  *  @param URLStrs 图片URL数组
  *  @param titles  标题数组
  */
--(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles{
+-(instancetype)initWithURLStr:(NSArray <NSString *> *)URLStrs titles:(NSArray <NSString *> *)titles selected:(void (^)(NSInteger index))didSelected{
     
     if (self=[super init]) {
         
         self.URLStrs=URLStrs;
         self.titles=titles;
-        
+        self.didSelected=didSelected;
         
         self.pageControl.numberOfPages=self.URLStrs.count;
         self.titleLabel.text=self.titles[0];
@@ -143,6 +145,13 @@
     cell.URLString=self.URLStrs[indexPath.item % self.URLStrs.count];
     
     return cell;
+}
+
+#pragma mark - 监听Item的点击
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.didSelected(indexPath.item%self.URLStrs.count);
 }
 
 #pragma mark - UIScrollView的代理方法

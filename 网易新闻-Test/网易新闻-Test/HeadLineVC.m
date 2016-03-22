@@ -23,7 +23,13 @@
     [RxHeadLineModel loadHeadLineSuccess:^(NSArray *headLines) {
       
 //        创建图片轮播期
-        RxLoopView *loopView=[[RxLoopView alloc]initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"]];
+//        RxLoopView *loopView=[[RxLoopView alloc]initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"]];
+        
+        RxLoopView *loopView=[[RxLoopView alloc]initWithURLStr:[headLines valueForKeyPath:@"imgsrc"] titles:[headLines valueForKeyPath:@"title"] selected:^(NSInteger index) {
+            
+            NSLog(@"点击了第%zd个Item",index);
+            
+        }];
         
 //        设置frame
         loopView.frame=self.view.bounds;
