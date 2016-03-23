@@ -134,7 +134,7 @@
 #pragma mark - UICollectionView 数据源方法
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return self.URLStrs.count*((self.URLStrs.count==1)?1:100);
+    return self.URLStrs.count*((self.URLStrs.count==1)?1:3);
 }
 
 
@@ -166,6 +166,8 @@
     if (page ==0 || page == ([self.collectionView numberOfItemsInSection:0]-1)) {
         
         page =self.URLStrs.count-((page==0)?0:1);
+        
+        self.collectionView.contentOffset = CGPointMake(page * scrollView.bounds.size.width, 0);
     }
     
     self.titleLabel.text=self.titles[page%self.URLStrs.count];
